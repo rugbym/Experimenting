@@ -8,7 +8,7 @@ from functools import reduce
 from operator import mul
 
 
-def timetester(func, repeats: int, n: int):
+def timetester(func, n: int, repeats=10):
     timelist = list()
     for _ in range(repeats):
         begin = time()
@@ -51,16 +51,18 @@ def factorial_secondmeth(n):
 
 
 if __name__ == "__main__":
-    n = 50000
-    repeats = 10
-    avg, std = timetester(factorial_firstmeth, repeats=repeats, n=n)
-    print(f"average time taken: {avg} \u00B1 {std} s")
-    # avg, std = timetester(factorial_secondmeth, repeats=repeats, n=n)
+    # n = 50000
+    # repeats = 10
+    # avg, std = timetester(factorial_firstmeth, repeats=repeats, n=n)
     # print(f"average time taken: {avg} \u00B1 {std} s")
-    avg, std = timetester(math.factorial, repeats=repeats, n=n)
-    print(f"average time taken: {avg} \u00B1 {std} s")
-    # fastest way to calculate factorials
-    avg, std = timetester(factorial_np, repeats=repeats, n=n)
-    print(f"average time taken: {avg} \u00B1 {std} s")
-    avg, std = timetester(factorial_mul, repeats=repeats, n=n)
-    print(f"average time taken: {avg} \u00B1 {std} s")
+    # # avg, std = timetester(factorial_secondmeth, repeats=repeats, n=n)
+    # # print(f"average time taken: {avg} \u00B1 {std} s")
+    # avg, std = timetester(math.factorial, repeats=repeats, n=n)
+    # print(f"average time taken: {avg} \u00B1 {std} s")
+    # # fastest way to calculate factorials
+    # avg, std = timetester(factorial_np, repeats=repeats, n=n)
+    # print(f"average time taken: {avg} \u00B1 {std} s")
+    # avg, std = timetester(factorial_mul, repeats=repeats, n=n)
+    # print(f"average time taken: {avg} \u00B1 {std} s")
+    print(f"{math.factorial(52):e}")
+    print(f"{factorial_mul(52):e}")
